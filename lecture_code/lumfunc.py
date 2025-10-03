@@ -15,6 +15,9 @@ timeI = 3e7
 # NOTE: this does not "enclose" zI and timeI; See below for a factory function
 # using this
 PopI = lambda mass: LF(mass, zI, timeI)
+
+# However the following syntax will capture the current values of zI and timeI:
+PopI = lambda mass, zI=zI, timeI=timeI: LF(mass, zI, timeI)
 print(PopI(1.0))
 
 # A "factory function": given metalicity and age, creates a function of mass
